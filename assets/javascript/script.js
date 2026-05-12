@@ -20,7 +20,7 @@ const persona = {
    eta: 30,
    citta: 'Roma',
 }
-console.table(persona);
+console.log(`${persona.nome}, ${persona.cognome}, ${persona.eta}, ${persona.citta},`);
 
 /* ESERCIZIO 2 — Aggiungi e rimuovi
    Sull'oggetto "persona": aggiungi "email", poi rimuovi "eta".
