@@ -15,12 +15,13 @@ REGOLE
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const persona = {
-   nome: 'Simone',
-   cognome: 'Pierantozzi',
-   eta: 30,
+   nome: 'Mario',
+   cognome: 'Rossi',
+   eta: 25,
    citta: 'Roma',
 }
-console.log(`${persona.nome}, ${persona.cognome}, ${persona.eta}, ${persona.citta},`);
+
+console.log(`${persona.nome} ${persona.cognome}, ${persona.eta},vive a ${persona.citta} `);
 
 /* ESERCIZIO 2 — Aggiungi e rimuovi
    Sull'oggetto "persona": aggiungi "email", poi rimuovi "eta".
@@ -29,9 +30,11 @@ console.log(`${persona.nome}, ${persona.cognome}, ${persona.eta}, ${persona.citt
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-persona.email = 'simone@gmail.com';
+persona.email = 'mario@rossi.com';
 delete persona.eta;
-console.log(persona)
+
+console.log(persona);
+
 
 /* ESERCIZIO 3 — Oggetto annidato
    Oggetto "utente" con una proprietà "indirizzo" (oggetto con via, citta, cap).
@@ -40,18 +43,11 @@ console.log(persona)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const utente = {
-   nome: 'Mario',
-   cognome: 'Rossi',
-   indirizzo: {
-      via: 'via Pratica di mare 52c',
-      citta: 'Pomezia',
-      cap: 71000,
-   },
-   eta: 40,
-};
+let utente = {
+   indirizzo: { via: 'Via pratica di mare', citta:'Pomezia', cap:'00071'},
+}
 
-console.log(utente['indirizzo'].cap);
+console.log(utente.indirizzo.cap);
 
 /* ESERCIZIO 4 — Bracket dinamica
    Sull'oggetto "persona", variabile chiave = "nome".
@@ -60,8 +56,7 @@ console.log(utente['indirizzo'].cap);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-chiave = 'nome';
-nome = 'Francesco';
+let chiave = 'nome';
 console.log(persona[chiave]);
 
 /* ESERCIZIO 5 — Numero più grande
@@ -71,27 +66,25 @@ console.log(persona[chiave]);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-let numberA = 5;
-let numberB = 5;
-let numberC = 10;
+let a = 5;
+let b = 15;
+let c = 5;
 
-if (numberA > numberB && numberA > numberC) {
-   console.log(numberA);
+if (a > b && a > c) {
+   console.log(`il numero piu grande è: ${a}`);
 }
 
-else if (numberB > numberC && numberB > numberA) {
-   console.log(numberB);
+else if (b > c && b > a) {
+   console.log(`il numero piu grande è: ${b}`);
 }
 
-else if (numberC > numberB && numberC > numberA) {
-   console.log(numberC);
+else if (c > a && c > b) {
+   console.log(`il numero piu grande è: ${c}`);
 }
 
 else {
    console.log('Pareggio');
 }
-
-
 /* ESERCIZIO 6 — E-commerce: spedizione
    Variabile "totale".
    Se totale >= 50 spedizione gratuita, altrimenti 9.90.
@@ -101,16 +94,14 @@ else {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-let totale = 45;
-let spezi;
+let totale = 40;
+let spedizione = 9.90;
 
 if (totale >= 50) {
-   spezi = 0;
+   console.log(`Totale carello: ${totale} - Spedizione gratuita - Totale finale: ${totale}`);
+} else {
+   console.log(`Totale carello: ${totale} - Spedizione a 9.90 - Totale finale: ${totale + spedizione}`);
 }
-else {
-   spezi = 9.9;
-}
-console.log(`totale carello: ${totale} - spedizione ${spezi} - totale finale: ${totale + spezi}`);
 
 /* ESERCIZIO 7 — typeof check
    Crea un array con 3 valori diversi (es. [42, "ciao", true]).
@@ -119,16 +110,15 @@ console.log(`totale carello: ${totale} - spedizione ${spezi} - totale finale: ${
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const mixArray = [42, 'ciao', true];
+const mixArray = [42, "ciao", true];
+
 for (let i = 0; i < mixArray.length; i++) {
    if (typeof mixArray[i] === 'number') {
-      console.log(mixArray[i] + ' è un numero');
-   }
-   else {
-      console.log(mixArray[i] + ' non è un numero');
+      console.log(`${mixArray[i]} è un numero`);
+   } else {
+      console.log(`${mixArray[i]} non è un numero`);
    }
 }
-
 
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
@@ -137,16 +127,11 @@ for (let i = 0; i < mixArray.length; i++) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const number = [];
-number.push(1);
-number.push(2);
-number.push(3);
-number.push(4);
-number.push(5);
-number.unshift(0)
+const newArray = [];
+newArray.push(1, 2, 3, 4, 5);
+newArray.unshift(0);
 
-console.log(number);
-console.log(number.length);
+console.log(`${newArray} - ${newArray.length}`);
 
 /* ESERCIZIO 9 — Carrello con splice
    Array ["Penna", "Quaderno", "Zaino", "Astuccio"].
@@ -156,9 +141,10 @@ console.log(number.length);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const scuola = ['Penna', 'Quaderno', 'Zaino', 'Astuccio'];
+let scuola = ["Penna", "Quaderno", "Zaino", "Astuccio"];
+console.log(scuola);
 
-scuola.splice(1, 1, 'Diario');
+scuola.splice(1, 1, 'Astuccio');
 console.log(scuola);
 
 /* ESERCIZIO 10 — Cerca un articolo
@@ -170,14 +156,14 @@ console.log(scuola);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const prodotti = ['Penna', 'Quaderno', 'Zaino'];
-const cercato = 'Zaino';
+let prodotti = ["Penna", "Quaderno", "Zaino"];
+cercato = 'Zaino';
 
-console.log(` Zaino è nel carello:` + prodotti.includes(cercato));
-
-console.log(` Zaino è in posizione:` + prodotti.indexOf(cercato));
-
-
+if (prodotti.includes(cercato)) {
+   console.log(`${cercato} è nel carrello: true e si trova alla posizione: ${prodotti.indexOf(cercato)}`);
+} else {
+   console.log(`Prodotto non disponibile`);
+}
 
 /* ESERCIZIO 11 — Lista utenti
    Array utenti di 3 oggetti { nome, eta }.
@@ -187,17 +173,30 @@ console.log(` Zaino è in posizione:` + prodotti.indexOf(cercato));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const utenti = [
-   { nome: 'Simone', eta: 30 },
-   { nome: 'Andrea', eta: 17 },
-   { nome: 'Gabriele', eta: 28 },
+let utenti = [
+   {
+      nome: 'Simone',
+      eta: 30,
+   },
+   {
+      nome: 'Francesco',
+      eta: 28,
+   },
+   {
+      nome: 'Andrea',
+      eta: 31,
+   },
+   {
+      nome: 'Gabriele',
+      eta: 19,
+   },
 ];
 
 for (let i = 0; i < utenti.length; i++) {
-   console.log(utenti[i])
+   console.log(`${utenti[i].nome} - (${utenti[i].eta})`);
 }
 
-console.table(utenti);
+console.table(utenti)
 
 /* ESERCIZIO 12 — Inventario disponibili
    Array prodotti di 4 oggetti { nome, prezzo, disponibile }.
@@ -209,26 +208,22 @@ console.table(utenti);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const products = [
-   { nome: 'mouse', prezzo: 25, disponibile: true },
-   { nome: 'tastiera', prezzo: 35, disponibile: false },
-   { nome: 'monitor', prezzo: 70, disponibile: true },
-   { nome: 'pc', prezzo: 650, disponibile: false },
-]
+let products = [
+   { nome: 'mouse', prezzo: 35, disponibile: true },
+   { nome: 'tastiera', prezzo: 60, disponibile: false },
+   { nome: 'monitor', prezzo: 45, disponibile: true },
+   { nome: 'stampante', prezzo: 100, disponibile: true }
+];
 
 for (let i = 0; i < products.length; i++) {
    if (products[i].disponibile && products[i].prezzo < 50) {
-      console.log('Offerta: ' + products[i].nome + ' - ' + products[i].prezzo);
+      console.log(`Offerta: ${products[i].nome} - (${products[i].prezzo})`);
+   } else if (products[i].disponibile && products[i].prezzo >= 50) {
+      console.log(`${products[i].nome} - ${products[i].prezzo}`);
+   } else {
+      console.log(`${products[i].nome} - Prodotto esaurito`);
    }
-   else if (products[i].disponibile && products[i].prezzo >= 10) {
-      console.log(products[i].nome + ' - ' + products[i].prezzo);
-   }
-   else {
-      console.log(products[i].nome + ' - esaurito');
-   }
-
 }
-
 /* --EXTRA-- ESERCIZIO 13 — Reverse manuale
    Array [1, 2, 3, 4, 5].
    Nuovo array "inverso", riempilo con un for (dall'ultimo al primo) usando push.
