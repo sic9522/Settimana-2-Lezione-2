@@ -105,7 +105,7 @@ let totale = 45;
 let spezi;
 
 if (totale >= 50) {
-   spezi = 0; 
+   spezi = 0;
 }
 else {
    spezi = 9.9;
@@ -123,7 +123,7 @@ const mixArray = [42, 'ciao', true];
 for (let i = 0; i < mixArray.length; i++) {
    if (typeof mixArray[i] === 'number') {
       console.log(mixArray[i] + ' è un numero');
-   } 
+   }
    else {
       console.log(mixArray[i] + ' non è un numero');
    }
@@ -188,9 +188,9 @@ console.log(` Zaino è in posizione:` + prodotti.indexOf(cercato));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const utenti = [
-   {nome: 'Simone', eta:30},
-   {nome: 'Andrea', eta:17},
-   {nome: 'Gabriele', eta:28},
+   { nome: 'Simone', eta: 30 },
+   { nome: 'Andrea', eta: 17 },
+   { nome: 'Gabriele', eta: 28 },
 ];
 
 for (let i = 0; i < utenti.length; i++) {
@@ -210,20 +210,21 @@ console.table(utenti);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const products = [
-   {nome:'mouse', prezzo:25, disponibile: true},
-   {nome:'tastiera', prezzo:35, disponibile: false},
-   {nome:'monitor', prezzo:70, disponibile: true},
-   {nome:'pc', prezzo:650, disponibile: false},
+   { nome: 'mouse', prezzo: 25, disponibile: true },
+   { nome: 'tastiera', prezzo: 35, disponibile: false },
+   { nome: 'monitor', prezzo: 70, disponibile: true },
+   { nome: 'pc', prezzo: 650, disponibile: false },
 ]
 
 for (let i = 0; i < products.length; i++) {
-   if (products[i].disponibile && products[i].prezzo < 10) {
-      console.log('Offerta:' + products[i].nome + ' - ' + products[i].prezzo )
+   if (products[i].disponibile && products[i].prezzo < 50) {
+      console.log('Offerta: ' + products[i].nome + ' - ' + products[i].prezzo);
    }
    else if (products[i].disponibile && products[i].prezzo >= 10) {
-      console.log(products[i].nome + ' - ' + products[i].prezzo)
+      console.log(products[i].nome + ' - ' + products[i].prezzo);
    }
-   else {console.log(products[i].nome + ' - esaurito')
+   else {
+      console.log(products[i].nome + ' - esaurito');
    }
 
 }
